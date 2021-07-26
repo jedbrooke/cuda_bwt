@@ -8,7 +8,7 @@ Requires CUDA and c++11
 
 This implementation uses `'$'` as the end marker character, as is commonly used in bioinformatics, since our data only contains A,C,T,G. if you need a different ETX character you can change it in "bwt.hpp"
 
-Normally the bwt algorithm has **O(*n<sup>2</sup>*)** Memory requirements, but we can get around that by just storing each "rotation number" of each string and using that to generate the entire string only when we need it for sorting so we don't need to store it, bringin the memory requirement to just **O(*n*)**
+Normally the bwt algorithm has **O(*n<sup>2</sup>*)** Memory requirements, but we can get around that by just storing each "rotation number" of each string and using that to generate the entire string only when we need it for sorting so we don't need to store it, bringing the memory requirement to just **O(*n*)**
 
 ## Running
 the included Makefile has rules for building the object file and the demo/benchmark executable
