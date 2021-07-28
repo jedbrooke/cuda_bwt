@@ -1,7 +1,7 @@
 # CUDA accelerated burrows-wheeler transform
 The burrows wheeler transform is an algorithm commonly used in bioinformatics and data compression applications.
 It involves sorting large amounts of data, which generally doesn't paralellize well.
-However, using bitonic sort, which generally has a runtime of **O(*n* log<sup>2</sup>(*n*))** if not parallelized, worse than traditional **O(*n* log(*n*))** algos. However, it can be greatly parallelized.
+We can bitonic sort, which generally has a runtime of **O(*n* log<sup>2</sup>(*n*))** if not parallelized, worse than traditional **O(*n* log(*n*))** algos, but it can be greatly parallelized.
 
 ## Implementation
 Requires CUDA and c++11
