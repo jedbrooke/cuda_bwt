@@ -45,7 +45,7 @@ std::string bwt_cpu(const std::string sequence) {
 int main(int argc, char const *argv[])
 {
     std::string alphabet("ATCG");
-    const int N = 1E5;
+    const int N = (argc > 1) ? atoi(argv[1]) : 1E6;
     std::cout << "running sample of " << N << std::endl;
     char* sequence = (char*) malloc((N+1) * sizeof(char));
     for (size_t i = 0; i < N; i++) {
@@ -56,7 +56,9 @@ int main(int argc, char const *argv[])
     // TODO: make time dynamic so we don't end up with 0
     std::cout << "running cpu version..." << std::endl;
     auto start = NOW();
-    auto cpu_seq = bwt_cpu(sequence);
+    // auto cpu_seq = bwt_cpu(sequence);
+    auto cpu_seq = "";
+
     auto cpu_time = std::chrono::duration_cast<std::chrono::milliseconds>(NOW() - start);
 
     std::cout << "running gpu version..." << std::endl;
@@ -68,11 +70,11 @@ int main(int argc, char const *argv[])
     std::cout << "gpu version: " << gpu_time.count() << "ms" << std::endl;
 
     // TODO: make this optional
-    if(cpu_seq.compare(gpu_seq) == 0) {
-        std::cout << "outputs match!" << std::endl;
-    } else {
-        std::cout << "uh oh, outputs mismatch, something went wrong!" << std::endl;
-    }
+    // if(cpu_seq.compare(gpu_seq) == 0) {
+    //     std::cout << "outputs match!" << std::endl;
+    // } else {
+    //     std::cout << "uh oh, outputs mismatch, something went wrong!" << std::endl;
+    // }
 
 
 

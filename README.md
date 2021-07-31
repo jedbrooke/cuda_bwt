@@ -26,9 +26,21 @@ testing platform:
 
 | Size:  | Cpu time:  |Gpu time:|
 |---    |---        |---        |
-|100Kbp |0.132s     | 0.114s    |
-|1Mbp   |1.956s     | 0.237s    |
-|10Mbp  |29.386s    | 2.985s    |
-|100Mbp |6m53.08s   | 0m58.167s |
+|100Kbp |0.129s     | 0.99s    |
+|1Mbp   |1.977s     | 0.228s    |
+|10Mbp  |26.996s    | 2.862s    |
+|100Mbp |6m21.266s   | 0m56.382s* |
+
+*When I run the gpu version by itself without running the cpu version like in demo.cpp, the time is 39.528s. not sure what is causing the difference
+
+
+Some tests of just the gpu, I did not run the cpu version for these tests because I thought it would take too long
+
+|Size:  | GPU time: |
+|---    |---        |
+| 500Mbp|5m23.737s   |
+| 800Mpb|11m0.889s   |
+| 1Bbp  |14m9.651s   |
+
 
 for small sequences below 1Mbp, it probably isn't worth the extra overhead and latency from sending the data to the GPU, but for larger datasets, it offers a 7-10x speedup.
