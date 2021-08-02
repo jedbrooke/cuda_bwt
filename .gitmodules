@@ -1,0 +1,9 @@
+[submodule "comparisons/GPU-lossless-compression"]
+	path = comparisons/GPU-lossless-compression
+	url = https://github.com/dingwentao/GPU-lossless-compression.git
+[submodule "comparisons/pem-bwt"]
+	path = comparisons/pem-bwt
+	url = https://github.com/dominikkempa/pem-bwt.git
+[submodule "comparisons/libsais"]
+	path = comparisons/libsais
+	url = https://github.com/IlyaGrebnov/libsais.git
